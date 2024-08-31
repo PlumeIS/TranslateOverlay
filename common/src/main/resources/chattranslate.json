@@ -1,0 +1,21 @@
+{
+  "toggle": true,
+
+  "translator": "BingTranslator",
+  "langFrom": "auto-detect",
+  "langTo": "zh-Hans",
+  "filters": [],
+
+  "ocrName": "local",
+
+  "baiduAPPID": "",
+  "baiduToken": "",
+
+  "RPCProtocol": "http",
+  "RPCHost": "localhost",
+  "RPCPort": 7384,
+  "RPCToken": "",
+
+  "baiduAPIKey": "",
+  "baiduSecretKey": ""
+}

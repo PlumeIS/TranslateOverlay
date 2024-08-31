@@ -1,0 +1,19 @@
+accessWidener	v1	named
+accessible field net/minecraft/client/MinecraftClient currentFps I
+accessible field net/minecraft/client/gui/screen/ingame/BookScreen contents Lnet/minecraft/client/gui/screen/ingame/BookScreen$Contents;
+accessible field net/minecraft/text/LiteralText string Ljava/lang/String;
+mutable field net/minecraft/text/LiteralText string Ljava/lang/String;
+accessible method net/minecraft/block/entity/SignBlockEntity getTexts (Z)[Lnet/minecraft/text/Text;
+accessible field net/minecraft/client/gui/screen/Screen drawables Ljava/util/List;
+
+# Forge side
+accessible field net/minecraft/client/gui/screen/CommandSuggestor textField Lnet/minecraft/client/gui/widget/TextFieldWidget;
+accessible field net/minecraft/client/gui/screen/CommandSuggestor parse Lcom/mojang/brigadier/ParseResults;
+accessible field net/minecraft/client/gui/screen/CommandSuggestor completingSuggestions Z
+accessible field net/minecraft/client/gui/screen/CommandSuggestor window Lnet/minecraft/client/gui/screen/CommandSuggestor$SuggestionWindow;
+accessible field net/minecraft/client/gui/screen/CommandSuggestor messages Ljava/util/List;
+accessible field net/minecraft/client/gui/screen/CommandSuggestor slashOptional Z
+accessible field net/minecraft/client/gui/screen/CommandSuggestor suggestingWhenEmpty Z
+accessible field net/minecraft/client/gui/screen/CommandSuggestor pendingSuggestions Ljava/util/concurrent/CompletableFuture;
+accessible method net/minecraft/client/gui/screen/CommandSuggestor show ()V
+accessible method net/minecraft/client/gui/screen/CommandSuggestor getLastPlayerNameStart (Ljava/lang/String;)I
