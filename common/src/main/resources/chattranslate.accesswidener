@@ -1,0 +1,7 @@
+accessWidener	v1	named
+accessible field net/minecraft/client/MinecraftClient currentFps I
+accessible field net/minecraft/client/gui/screen/ingame/BookScreen contents Lnet/minecraft/client/gui/screen/ingame/BookScreen$Contents;
+accessible field net/minecraft/text/LiteralText string Ljava/lang/String;
+mutable field net/minecraft/text/LiteralText string Ljava/lang/String;
+accessible method net/minecraft/block/entity/SignBlockEntity getTexts (Z)[Lnet/minecraft/text/Text;
+accessible field net/minecraft/client/gui/screen/Screen drawables Ljava/util/List;

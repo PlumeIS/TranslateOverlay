@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[39,)"
+#issueTrackerURL = ""
+license = "Insert License Here"
+
+[[mods]]
+modId = "chattranslate"
+version = "${version}"
+displayName = "ChatTranslate"
+authors = "PlumeIS"
+description = '''
+ChatTranslate
+'''
+#logoFile = ""
+
+[[dependencies.chattranslate]]
+modId = "forge"
+mandatory = true
+versionRange = "[39,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.chattranslate]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.18,)"
+ordering = "NONE"
+side = "BOTH"
