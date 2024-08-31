@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "mixin": [
+    "chattranslate.mixins.json",
+    "chattranslate-common.mixins.json"
+  ],
+  "quilt_loader": {
+    "group": "${group}",
+    "id": "chattranslate",
+    "version": "${version}",
+    "metadata": {
+      "name": "ChatTranslate",
+      "description": "ChatTranslate",
+      "contributors": {
+        "Me!": "PlumeIS"
+      },
+      "contact": {
+        "sources": ""
+      },
+      "icon": "assets/examplemod/icon.png"
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "entrypoints": {
+      "init": [
+        "xyz.plumc.chattranslate.quilt.ChatTranslateQuilt"
+      ]
+    },
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "version": "*"
+      },
+      {
+        "id": "quilt_base",
+        "version": "*"
+      },
+      {
+        "id": "minecraft",
+        "version": ">=1.20.1"
+      },
+      {
+        "id": "architectury",
+        "version": ">=9.1.12"
+      }
+    ]
+  },
+  "minecraft": {
+    "environment": "*"
+  }
+}
