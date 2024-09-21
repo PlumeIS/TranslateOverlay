@@ -34,4 +34,4 @@ Quilt: [1.20.6]()
 
 ### 配置
 配置文件保存于 `./<minecraftDir>/config/translateoverlay.json`   
-获取详细配置教程，请参阅 [Config Entry Doc]()
+获取详细配置教程，请参阅 [Config Entry Doc](https://github.com/PlumeIS/TranslateOverlay/blob/1.21/CONFIG_DOC.md)
