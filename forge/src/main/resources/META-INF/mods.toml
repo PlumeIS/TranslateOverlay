@@ -4,23 +4,23 @@ loaderVersion = "[51,)"
 license = "Insert License Here"
 
 [[mods]]
-modId = "chattranslate"
+modId = "translateoverlay"
 version = "${version}"
-displayName = "ChatTranslate"
+displayName = "TranslateOverlay"
 authors = "PlumeIS"
 description = '''
-ChatTranslate
+TranslateOverlay
 '''
 #logoFile = ""
 
-[[dependencies.chattranslate]]
+[[dependencies.translateoverlay]]
 modId = "forge"
 mandatory = true
 versionRange = "[51,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.chattranslate]]
+[[dependencies.translateoverlay]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.21,)"
