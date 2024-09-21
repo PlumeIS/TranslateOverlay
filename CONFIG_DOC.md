@@ -6,6 +6,7 @@
 ### toggle
 To switch ON/OFF TranslateOverlay
 > Selections: true | false
+---
 ### translator
 Set Using Translate Platform to TranslateOverlay
 > Selections: BingTranslator | BaiduTranslator | GoogleTranslator(UNFINISH)
@@ -17,13 +18,19 @@ Set to language.
 > Selections: [languages...](https://github.com/PlumeIS/TranslateOverlay/blob/1.21/CONFIG_DOC.md#language)
 ### filters
 Set filter.
+
+---
 ### ocrName
 Set Using OCR Platform to TranslateOverlay
 > Selections: local | baidu | baidu_pt
+
+---
 ### baiduAPPID
 BaiduAPPID when using translator with `BaiduTranslator` or ocrName with `baidu_pt` required.
 ### baiduToken
 BaiduToken when using translator with `BaiduTranslator` or ocrName with `baidu_pt` required.
+
+---
 ### RPCProtocol
 Local RPC Http Protocol.
 > Selections: http | https
@@ -33,6 +40,8 @@ Local RPC Http Host.
 Local RPC Http Port.
 ### RPCToken
 Local RPC Http Token (Remote designated).
+
+---
 ### baiduAPIKey
 BaiduAPIKey when using ocrName with `baidu` required.
 ### baiduSecretKey
