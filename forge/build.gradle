@@ -14,8 +14,8 @@ loom {
         convertAccessWideners = true
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
 
-        mixinConfig "chattranslate-common.mixins.json"
-        mixinConfig "chattranslate.mixins.json"
+        mixinConfig "translateoverlay-common.mixins.json"
+        mixinConfig "translateoverlay.mixins.json"
     }
 }
 
