@@ -1,5 +1,5 @@
 # TranslateOverlay
-# Language: English | [简体中文]()
+### Language: English | [简体中文]()
 ### A Minecraft translate mod with overlay.
 
 #### Support Version:   
