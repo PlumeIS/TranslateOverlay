@@ -11,10 +11,10 @@ Set Using Translate Platform to TranslateOverlay
 > Selections: BingTranslator | BaiduTranslator | GoogleTranslator(UNFINISH)
 ### langFrom
 Set from language.
-> Selections: [languages...]()
+> Selections: [languages...](https://github.com/PlumeIS/TranslateOverlay/blob/1.21/CONFIG_DOC.md#language)
 ### langTo
 Set to language.
-> Selections: [languages...]()
+> Selections: [languages...](https://github.com/PlumeIS/TranslateOverlay/blob/1.21/CONFIG_DOC.md#language)
 ### filters
 Set filter.
 ### ocrName
