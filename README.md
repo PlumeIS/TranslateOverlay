@@ -1,5 +1,5 @@
 # TranslateOverlay
-### Language: English | [简体中文]()
+### Language: English | [简体中文](https://github.com/PlumeIS/TranslateOverlay/blob/1.21/README_zh-cn.md)
 ### A Minecraft translate mod with overlay.
 
 #### Support Version:   
