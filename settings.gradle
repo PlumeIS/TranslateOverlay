@@ -13,4 +13,4 @@ include("fabric")
 include("quilt")
 include("forge")
 
-rootProject.name = "chattranslate-arch-1.20.1"
+rootProject.name = "translateoverlay-arch-1.20.1"

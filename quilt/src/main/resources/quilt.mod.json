@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "mixin": [
-    "chattranslate.mixins.json",
-    "chattranslate-common.mixins.json"
+    "translateoverlay.mixins.json",
+    "translateoverlay-common.mixins.json"
   ],
   "quilt_loader": {
     "group": "${group}",
-    "id": "chattranslate",
+    "id": "translateoverlay",
     "version": "${version}",
     "metadata": {
-      "name": "ChatTranslate",
-      "description": "ChatTranslate",
+      "name": "TranslateOverlay",
+      "description": "TranslateOverlay",
       "contributors": {
         "Me!": "PlumeIS"
       },
@@ -22,7 +22,7 @@
     "intermediate_mappings": "net.fabricmc:intermediary",
     "entrypoints": {
       "init": [
-        "xyz.plumc.chattranslate.quilt.ChatTranslateQuilt"
+        "cn.plumc.translateoverlay.quilt.TranslateOverlayQuilt"
       ]
     },
     "depends": [
