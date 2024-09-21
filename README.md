@@ -34,4 +34,4 @@ Transtale Sign/Letcure in world.
 
 ### Config
 Config file save in `./<minecraftDir>/config/translateoverlay.json`   
-For details about Config entry, please refer to [Config Entry Doc]()
+For details about Config entry, please refer to [Config Entry Doc](https://github.com/PlumeIS/TranslateOverlay/blob/1.21/CONFIG_DOC.md)
