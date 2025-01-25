@@ -80,7 +80,7 @@ public class ChatTranslator {
         return true;
     }
     public static void sendBypassMessage(Text component){
-        MinecraftClient.getInstance().player.sendMessage(Text.literal(MESSAGE_PREFIX +component.getString()));
+        if (MinecraftClient.getInstance().player!=null) MinecraftClient.getInstance().player.sendMessage(Text.literal(MESSAGE_PREFIX +component.getString()));
     }
 
 }
