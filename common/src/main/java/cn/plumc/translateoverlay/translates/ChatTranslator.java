@@ -79,7 +79,7 @@ public class ChatTranslator {
         return true;
     }
     public static void sendBypassMessage(Text component){
-        MinecraftClient.getInstance().player.sendSystemMessage(new LiteralText(MESSAGE_PREFIX +component.getString()), UUID.randomUUID());
+        if (MinecraftClient.getInstance().player!=null) MinecraftClient.getInstance().player.sendSystemMessage(new LiteralText(MESSAGE_PREFIX +component.getString()), UUID.randomUUID());
     }
 
 }
