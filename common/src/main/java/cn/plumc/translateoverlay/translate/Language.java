@@ -197,10 +197,4 @@ public enum Language {
         }
         return Language.ENGLISH;
     }
-
-    public static void main(String[] args) {
-        for (Language l : Language.values()){
-            System.out.printf("    %s (%s)%n", l.code, l.name);
-        }
-    }
 }
