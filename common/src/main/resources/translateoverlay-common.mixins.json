@@ -9,6 +9,8 @@
     "GuiMessage$LineMixin",
     "GuiMessageMixin",
     "GuiMixin",
+    "HandledScreenMixin",
+    "InGameHudMixin",
     "KeyboardHandlerMixin",
     "MinecraftMixin",
     "ScreenMixin"

@@ -123,7 +123,7 @@ public class TranslatedChatComponent {
         }
         if (!isInChat){
             if (boxWidth != currentBoxWidth){
-                currentWidthAnimation = new Animation(currentBoxWidth, boxWidth, new SemFunction(), Animation.getTime(0.75f));
+                currentWidthAnimation = new Animation(currentBoxWidth, boxWidth, new SemFunction(), Animation.getTime(0.375f));
                 currentBoxWidth = boxWidth;
             }
         }
@@ -251,7 +251,7 @@ public class TranslatedChatComponent {
                 this.scrollChat(1);
             }
             boolean bl2 = j == list.size() - 1;
-            this.trimmedMessages.add(0, new TranslatedGuiMessage.AnimaLine(addedTime, formattedCharSequence, tag, bl2, new Animation(-MathHelper.ceil((float)this.getWidth() / (float)this.getScale()), 0, new SemFunction(), Animation.getTime(1.5f)), new Animation(-getLineHeight(), 0, new SemFunction(), Animation.getTime(0.75f)), uuid));
+            this.trimmedMessages.add(0, new TranslatedGuiMessage.AnimaLine(addedTime, formattedCharSequence, tag, bl2, new Animation(-MathHelper.ceil((float)this.getWidth() / (float)this.getScale()), 0, new SemFunction(), Animation.getTime(0.75f)), new Animation(-getLineHeight(), 0, new SemFunction(), Animation.getTime(0.75f)), uuid));
             lastMessageLines++;
         }
         ChatStatus.lastMessageUUID = uuid;

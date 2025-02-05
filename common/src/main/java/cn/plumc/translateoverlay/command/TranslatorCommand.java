@@ -85,6 +85,7 @@ public class TranslatorCommand {
     public static int setTranslator(Translator translator) {
         TranslateOverlay.threadFactory.newThread(() -> {
             Config.setTranslator(translator);
+            Config.getTranslator().clearCache();
             ChatTranslator.sendBypassMessage(Text.translatable("commands.translator.set.successful"));
         }).start();
         return 1;
