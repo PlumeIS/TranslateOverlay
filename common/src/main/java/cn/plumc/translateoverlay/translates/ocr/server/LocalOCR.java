@@ -61,7 +61,7 @@ public class  LocalOCR implements BaseOCR {
                 int width = end.get(0).getAsInt() - left;
                 int height = end.get(1).getAsInt() - top;
                 String result = Config.getTranslator().translate(text);
-                ocrResults.add(new AnimationOCRResult(new Animation(0, 1, new LinearFunction(), Animation.getTime(1.5f)), null,
+                ocrResults.add(new AnimationOCRResult(new Animation(0, 1, new LinearFunction(), Animation.getTime(0.75f)), null,
                                 new OCRResult(
                                         (float) left / screenshot.getWidth(),
                                         (float) top / screenshot.getHeight(),

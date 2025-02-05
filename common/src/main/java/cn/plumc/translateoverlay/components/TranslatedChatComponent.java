@@ -110,7 +110,7 @@ public class TranslatedChatComponent {
         }
         if (!isInChat){
             if (boxWidth != currentBoxWidth){
-                currentWidthAnimation = new Animation(currentBoxWidth, boxWidth, new SemFunction(), Animation.getTime(0.75f));
+                currentWidthAnimation = new Animation(currentBoxWidth, boxWidth, new SemFunction(), Animation.getTime(0.375f));
                 currentBoxWidth = boxWidth;
             }
         }
