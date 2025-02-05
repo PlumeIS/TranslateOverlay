@@ -9,6 +9,18 @@ Quilt: [1.20.6]()
 
 ---
 
+### Supported Translation Platforms：
+> Translation process requires upload your data to a remote server.
++ Microsoft Bing
+  + Open and use.
+  + No configuration required.
++ Baidu
+  + Apply for and configure Baidu APIs.
++ Local API
+  + Use RPC to build local translation services.
+
+---
+
 ### Features:
 #### ChatTranslate
 Transte message chat in chat box.   
