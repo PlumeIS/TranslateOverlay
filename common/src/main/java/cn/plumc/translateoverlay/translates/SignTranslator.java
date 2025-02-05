@@ -19,6 +19,8 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.glfw.GLFW;
 
+import static cn.plumc.translateoverlay.utils.TranslateUtil.STYLE_HOLDER;
+
 public class SignTranslator {
     public static void translate(BlockHitResult rayTraceResult){
         if (rayTraceResult.getType()== HitResult.Type.BLOCK) {
@@ -34,7 +36,7 @@ public class SignTranslator {
                     SignText frontText = new SignText();
                     for (int i = 0; i < frontMessages.length; i++){
                         if (!frontMessages[i].getString().isEmpty()) {
-                            String message = MessageUtil.serializeMutableComponent(frontMessages[i], ChatTranslator.STYLE_HOLDER);
+                            String message = MessageUtil.serializeMutableComponent(frontMessages[i], STYLE_HOLDER);
                             frontText = frontText.withMessage(i, MessageUtil.parseComponent(Config.getTranslator().translate(message).replaceAll(" §", "§").replaceAll("�", ""), ChatColor.BLACK));
                         }
                     }
@@ -43,7 +45,7 @@ public class SignTranslator {
                     SignText backText = new SignText();
                     for (int i = 0; i < backMessages.length; i++){
                         if (!backMessages[i].getString().isEmpty()){
-                            String message = MessageUtil.serializeMutableComponent(backMessages[i], ChatTranslator.STYLE_HOLDER);
+                            String message = MessageUtil.serializeMutableComponent(backMessages[i], STYLE_HOLDER);
                             backText = backText.withMessage(i, MessageUtil.parseComponent(Config.getTranslator().translate(message).replaceAll(" §", "§").replaceAll("�", ""), ChatColor.BLACK));
                         }
                     }

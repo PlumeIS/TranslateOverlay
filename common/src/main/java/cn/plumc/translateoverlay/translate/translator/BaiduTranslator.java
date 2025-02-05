@@ -1,15 +1,21 @@
 package cn.plumc.translateoverlay.translate.translator;
 
+import cn.plumc.translateoverlay.translate.HandlerMethod;
 import cn.plumc.translateoverlay.translate.Language;
+import cn.plumc.translateoverlay.utils.HttpHelper;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
+import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -40,36 +46,42 @@ public class BaiduTranslator extends Translator{
     }
     private final String APPID;
     private final String token;
+
+    HttpHelper httpHelper = new HttpHelper();
+
     public BaiduTranslator(String APPID, String token){
         this.APPID = APPID;
         this.token = token;
     }
 
     @Override
-    public String translate(String message, String langFrom, String langTo) {
-        int salt = new Random().nextInt(0, 10000);
-        try {
-            MessageDigest digest = MessageDigest.getInstance("MD5");
-            digest.update((APPID+message+salt+token).getBytes(StandardCharsets.UTF_8));
-            String sign = new BigInteger(1, digest.digest()).toString(16);
-            URL api = new URL(API_URL.formatted(message, langFrom, langTo, APPID, salt, sign));
-            URLConnection connection = api.openConnection();
-            connection.connect();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
-            StringBuilder response = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                response.append(line);
+    public String translate(String message, String langFrom, String langTo) throws IOException {
+        return delay(1000, ()->{
+            try {
+                int salt = new Random().nextInt(0, 10000);
+                MessageDigest digest = MessageDigest.getInstance("MD5");
+                digest.update((APPID+message+salt+token).getBytes(StandardCharsets.UTF_8));
+                String sign = new BigInteger(1, digest.digest()).toString(16);
+
+                String path = API_URL.formatted(HttpHelper.valid(message), langFrom, langTo, APPID, salt, sign);
+                String response = httpHelper.sendGet(path, null);
+                JsonObject result = JsonParser.parseString(response).getAsJsonObject();
+
+                return result.get("trans_result").getAsJsonArray().get(0).getAsJsonObject().get("dst").getAsString();
+            } catch (NoSuchAlgorithmException e) {
+                throw new RuntimeException(e);
             }
-            reader.close();
-            Gson gson = new Gson();
-            JsonObject json = gson.fromJson(response.toString(), JsonObject.class);
-            return json.getAsJsonArray("trans_result").get(0).getAsJsonObject().get("dst").getAsString();
-        } catch (NoSuchAlgorithmException ignored) {
-        } catch (IOException e) {
-            return e.getMessage();
-        }
-        throw new RuntimeException();
+        });
+    }
+
+    @Override
+    public HandlerMethod getHandlerMethod() {
+        return HandlerMethod.REJOIN_HOLDER;
+    }
+
+    @Override
+    public Map<Language, String> getLanguageMapping() {
+        return LANGUAGE_MAPPING;
     }
 
     @Override
