@@ -10,3 +10,4 @@ accessible field net/minecraft/text/MutableText content Lnet/minecraft/text/Text
 mutable field  net/minecraft/text/MutableText content Lnet/minecraft/text/TextContent;
 extendable class net/minecraft/client/gui/hud/ChatHudLine
 extendable class net/minecraft/client/gui/hud/ChatHudLine$Visible
+accessible field net/minecraft/client/gui/hud/InGameHud SCOREBOARD_ENTRY_COMPARATOR Ljava/util/Comparator;
