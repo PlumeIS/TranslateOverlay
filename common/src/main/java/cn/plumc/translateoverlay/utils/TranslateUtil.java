@@ -30,7 +30,7 @@ public class TranslateUtil {
     }
     public static Text translateComponents(Text rawComponent){
         MutableText translateComponents = new LiteralText("");
-        for (Text component : rawComponent.getSiblings()){
+        for (Text component : rawComponent.getWithStyle(Style.EMPTY)){
             String string = component.getString();
             Style style = component.getStyle();
             String translated = Config.getTranslator().translate(string);
