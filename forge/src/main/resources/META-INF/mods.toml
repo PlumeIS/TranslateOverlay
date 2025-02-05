@@ -11,7 +11,7 @@ authors = "PlumeIS"
 description = '''
 TranslateOverlay
 '''
-#logoFile = ""
+logoFile = "icon.png"
 
 [[dependencies.translateoverlay]]
 modId = "forge"
