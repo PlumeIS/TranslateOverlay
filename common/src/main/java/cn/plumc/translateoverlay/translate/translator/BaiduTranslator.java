@@ -1,15 +1,18 @@
 package cn.plumc.translateoverlay.translate.translator;
 
+import cn.plumc.translateoverlay.translate.HandlerMethod;
+import cn.plumc.translateoverlay.utils.HttpHelper;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import cn.plumc.translateoverlay.translate.Language;
+import com.google.gson.JsonParser;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
-import java.net.URL;
-import java.net.URLConnection;
+import java.net.*;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -40,6 +43,9 @@ public class BaiduTranslator extends Translator{
     }
     private final String APPID;
     private final String token;
+
+    HttpHelper httpHelper = new HttpHelper();
+
     public BaiduTranslator(String APPID, String token){
         this.APPID = APPID;
         this.token = token;

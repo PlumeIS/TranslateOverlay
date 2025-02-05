@@ -5,6 +5,7 @@ accessible field net/minecraft/text/LiteralText string Ljava/lang/String;
 mutable field net/minecraft/text/LiteralText string Ljava/lang/String;
 accessible method net/minecraft/block/entity/SignBlockEntity getTexts (Z)[Lnet/minecraft/text/Text;
 accessible field net/minecraft/client/gui/screen/Screen drawables Ljava/util/List;
+accessible method net/minecraft/client/font/TextRenderer draw (Lnet/minecraft/text/OrderedText;FFILnet/minecraft/util/math/Matrix4f;Z)I
 
 # Forge side
 accessible field net/minecraft/client/gui/screen/CommandSuggestor textField Lnet/minecraft/client/gui/widget/TextFieldWidget;

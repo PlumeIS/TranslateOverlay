@@ -57,7 +57,7 @@ public class BaiduPT implements BaseOCR{
                         String dst = result.getAsJsonObject().get("dst").getAsString();
                         String rectRaw = result.getAsJsonObject().get("rect").getAsString();
                         List<Integer> rect = Arrays.stream(rectRaw.split(" ")).map(Integer::parseInt).toList();
-                        results.add(new AnimationOCRResult(new Animation(0, 1, new LinearFunction(), Animation.getTime(1.5f)), null,
+                        results.add(new AnimationOCRResult(new Animation(0, 1, new LinearFunction(), Animation.getTime(0.75f)), null,
                                         new OCRResult(
                                                 (float) rect.get(0) / screenshot.getWidth(),
                                                 (float) rect.get(1) / screenshot.getHeight(),
