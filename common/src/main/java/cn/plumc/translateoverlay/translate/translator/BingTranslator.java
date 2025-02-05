@@ -1,5 +1,6 @@
 package cn.plumc.translateoverlay.translate.translator;
 
+import cn.plumc.translateoverlay.utils.HttpHelper;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonSyntaxException;
@@ -18,16 +19,13 @@ import org.apache.http.message.BasicNameValuePair;
 import cn.plumc.translateoverlay.translate.HandlerMethod;
 import cn.plumc.translateoverlay.translates.ChatTranslator;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class BingTranslator extends Translator {
     public static final String INFO_URL = "https://cn.bing.com/search?q=translate";
@@ -57,7 +55,7 @@ public class BingTranslator extends Translator {
     }
 
     @Override
-    public String translate(String text, String langFrom, String langTo) {
+    public String translate(String text, String langFrom, String langTo) throws IOException {
         if (isOverAge()) update();
         boolean ignore = true;
         for (char c : text.toCharArray()) {
@@ -141,61 +139,5 @@ public class BingTranslator extends Translator {
             this.update();
             return null;
         }
-    }
-}
-
-
-class HttpHelper{
-    private final CloseableHttpClient httpClient;
-    private static final String userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183";
-    private static final RequestConfig requestConfig = RequestConfig.custom()
-                                                                    .setConnectTimeout(5000)
-                                                                    .setConnectionRequestTimeout(5000)
-                                                                    .setSocketTimeout(5000)
-                                                                    .setRedirectsEnabled(true).build();
-
-    public HttpHelper(){
-        httpClient = HttpClients.createDefault();
-    }
-
-    public String sendGet(String url, Map<String, String> cookies){
-        HttpGet httpGet = new HttpGet(url);
-        httpGet.setHeader(HttpHeaders.USER_AGENT, userAgent);
-        httpGet.setHeader("Cookie", cookies.entrySet().stream().map(entry -> entry.getKey() + "=" + entry.getValue()).collect(Collectors.joining("; ")));
-        httpGet.setConfig(requestConfig);
-        CloseableHttpResponse response;
-        try {
-            response = httpClient.execute(httpGet);
-            return readResponse(response.getEntity());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } finally {
-            httpGet.releaseConnection();
-        }
-    }
-
-    public String sendPost(String url, Map<String, String> cookies, Map<String, String> data){
-        HttpPost httpPost = new HttpPost(url);
-        httpPost.setHeader(HttpHeaders.USER_AGENT, userAgent);
-        httpPost.setHeader("Cookie", cookies.entrySet().stream().map(entry -> entry.getKey() + "=" + entry.getValue()).collect(Collectors.joining("; ")));
-        httpPost.setConfig(requestConfig);
-        CloseableHttpResponse response;
-        try {
-            UrlEncodedFormEntity entity = new UrlEncodedFormEntity(data.entrySet().stream().map(entry -> new BasicNameValuePair(entry.getKey(), entry.getValue())).collect(Collectors.toList()), StandardCharsets.UTF_8);
-            httpPost.setEntity(entity);
-            response = httpClient.execute(httpPost);
-            return readResponse(response.getEntity());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } finally {
-            httpPost.releaseConnection();
-        }
-    }
-
-    private String readResponse(HttpEntity entity) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(entity.getContent(), StandardCharsets.UTF_8));
-        StringBuilder builder = new StringBuilder();
-        reader.lines().forEach((line) ->builder.append(line).append("\n"));
-        return builder.toString();
     }
 }
