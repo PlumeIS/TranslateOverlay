@@ -21,8 +21,6 @@ import static cn.plumc.translateoverlay.translates.ChatTranslator.checkStatus;
 
 @Mixin(ChatHud.class)
 public abstract class ChatComponentMixin {
-    @Unique
-
     @Inject(method = "tickRemovalQueueIfExists", at = @At("HEAD"))
     private void onTick(CallbackInfo ci){
         ChatTranslator.translatedChatComponent.tick();

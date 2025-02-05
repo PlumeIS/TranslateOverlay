@@ -103,7 +103,6 @@ public class MessageUtil {
         return stringBuilder.append(holder).toString();
     }
 
-
     public static MutableText parseComponent(String message, ChatColor defaultColor) {
         MutableText components = Text.empty();
         StringBuilder builder = new StringBuilder();

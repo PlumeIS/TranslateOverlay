@@ -51,7 +51,8 @@ public class Config {
     }
 
     public static void setTranslator(Translator translator) {
-        ConfigFile.translator = translator.name;
+        System.out.println(translator);
+        ConfigFile.translator = translator.platform;
         setupTranslator(translator);
     }
 

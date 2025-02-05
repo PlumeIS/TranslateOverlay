@@ -1,7 +1,6 @@
 package cn.plumc.translateoverlay.utils;
 
 import cn.plumc.translateoverlay.config.Config;
-import cn.plumc.translateoverlay.translates.ChatTranslator;
 import net.minecraft.client.gui.screen.ingame.BookScreen;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.WrittenBookContentComponent;
@@ -16,7 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static cn.plumc.translateoverlay.translates.ChatTranslator.CLEAR_STYLE;
+import static cn.plumc.translateoverlay.utils.TranslateUtil.CLEAR_STYLE;
+import static cn.plumc.translateoverlay.utils.TranslateUtil.STYLE_HOLDER;
 
 public class BookUtil {
     public static ItemStack getEmptyBookItemStack(){
@@ -42,7 +42,7 @@ public class BookUtil {
                 }
                 return Optional.empty();
             }, Style.EMPTY);
-            String message = MessageUtil.serializeMutableComponent(list, ChatTranslator.STYLE_HOLDER);
+            String message = MessageUtil.serializeMutableComponent(list, STYLE_HOLDER);
             String translated = Config.getTranslator().translate(message);
             String result = translated.replaceAll(" §", "§").replaceAll("�", "");
             for (String s : CLEAR_STYLE){
