@@ -9,7 +9,7 @@
     "repo": "https://github.com/PlumeIS/TranslateOverlay-fabric-1.20.6"
   },
   "license": "MIT",
-  "icon": "assets/translateoverlay/icon.png",
+  "icon": "icon.png",
   "accessWidener": "translateoverlay.accesswidener",
   "environment": "client",
   "entrypoints": {
