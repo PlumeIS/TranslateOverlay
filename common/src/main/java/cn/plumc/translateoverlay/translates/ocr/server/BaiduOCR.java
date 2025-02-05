@@ -52,7 +52,7 @@ public class BaiduOCR implements BaseOCR{
                 int width = location.get("width").getAsInt();
                 int height = location.get("height").getAsInt();
                 String result = Config.getTranslator().translate(words);
-                ocrResults.add(new AnimationOCRResult(new Animation(0, 1, new LinearFunction(), Animation.getTime(1.5f)), null,
+                ocrResults.add(new AnimationOCRResult(new Animation(0, 1, new LinearFunction(), Animation.getTime(0.75f)), null,
                         new OCRResult(
                         (float) left /screenshot.getWidth(),
                         (float) top /screenshot.getHeight(),

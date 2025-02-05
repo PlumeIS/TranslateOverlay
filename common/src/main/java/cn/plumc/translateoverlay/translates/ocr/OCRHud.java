@@ -68,7 +68,7 @@ public class OCRHud {
             float opacity;
             if (mouseHovered){
                 if (i != hoveredIndex){
-                    if (result.focus==null) result.focus = new Animation(1.0f, 0.3f, new LinearFunction(), new Animation.Time(0.85f, deltaTime));
+                    if (result.focus==null) result.focus = new Animation(1.0f, 0.1f, new LinearFunction(), new Animation.Time(0.425f, deltaTime));
                     System.out.println(result.focus.step());
                     opacity = result.start.step() * result.focus.step();
                 } else opacity = result.start.step();
@@ -129,14 +129,14 @@ public class OCRHud {
     public void setInfo(String info){
         this.lastInfo = this.info;
         this.info = info;
-        this.infoStartAnimation = new Animation(0, 1, new LinearFunction(), Animation.getTime(0.2f));
-        this.infoEndAnimation = new Animation(1, 0, new LinearFunction(), Animation.getTime(0.3f));
+        this.infoStartAnimation = new Animation(0, 1, new LinearFunction(), Animation.getTime(0.1f));
+        this.infoEndAnimation = new Animation(1, 0, new LinearFunction(), Animation.getTime(0.15f));
     }
 
     public void clearInfo(){
         this.lastInfo = this.info;
         this.info = null;
-        this.infoEndAnimation = new Animation(1, 0, new LinearFunction(), Animation.getTime(0.2f));
+        this.infoEndAnimation = new Animation(1, 0, new LinearFunction(), Animation.getTime(0.1f));
     }
 
     public boolean movedCheck(){
@@ -159,7 +159,7 @@ public class OCRHud {
     }
     public void clearWithFadeOut(){
         for (AnimationOCRResult result: results){
-            if (result.end==null) result.end = new Animation(1, 0, new LinearFunction(), Animation.getTime(0.35f));
+            if (result.end==null) result.end = new Animation(1, 0, new LinearFunction(), Animation.getTime(0.175f));
         }
     }
 

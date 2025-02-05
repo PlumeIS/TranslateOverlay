@@ -3,8 +3,10 @@ package cn.plumc.translateoverlay.components.animation;
 import net.minecraft.client.MinecraftClient;
 
 public class Animation {
+    public static float speed = 1.0F;
+
     public record Time(float second, float deltaTime){}
-    public static Time getTime(float second){return new Time(second,(1000f/ MinecraftClient.getInstance().getCurrentFps())/50);}
+    public static Time getTime(float second){return new Time(second * (1.0F / speed),(1000f/MinecraftClient.getInstance().getCurrentFps())/50);}
 
     public float start;
     public float end;
@@ -35,6 +37,10 @@ public class Animation {
         current ++;
         last = (float) (start + (end - start) * calced);
         return last;
+    }
+
+    public boolean isEnd(){
+        return current >= step;
     }
 
     public String toString(){

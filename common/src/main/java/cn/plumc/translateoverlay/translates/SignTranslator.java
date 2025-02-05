@@ -19,6 +19,8 @@ import cn.plumc.translateoverlay.utils.ChatColor;
 import cn.plumc.translateoverlay.utils.MessageUtil;
 import cn.plumc.translateoverlay.utils.TickUtil;
 
+import static cn.plumc.translateoverlay.utils.TranslateUtil.STYLE_HOLDER;
+
 public class SignTranslator {
     public static void translate(BlockHitResult rayTraceResult){
         if (rayTraceResult.getType()== HitResult.Type.BLOCK) {
@@ -33,7 +35,7 @@ public class SignTranslator {
                     Text[] frontMessages = signBlockEntity.getTexts(false);
                     for (int i = 0; i < frontMessages.length; i++){
                         if (!frontMessages[i].getString().isEmpty()) {
-                            String message = MessageUtil.serializeMutableComponent(frontMessages[i], ChatTranslator.STYLE_HOLDER);
+                            String message = MessageUtil.serializeMutableComponent(frontMessages[i], STYLE_HOLDER);
                             cloneSignBlockEntity.setTextOnRow(i, MessageUtil.parseComponent(Config.getTranslator().translate(message).replaceAll(" §", "§").replaceAll("�", ""), ChatColor.BLACK));
                         }
                     }
